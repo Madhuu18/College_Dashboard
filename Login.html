@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Login.css" />
+    <title>WELCOME</title>
+  </head>
+  <body>
+    <h1 id="welcomeText">Welcome</h1>
+
+    <div class="btn-container">
+      <div class="dropdown">
+        <button>Projects</button>
+      </div>
+      <div class="dropdown">
+        <button id="tasksBtn">Tasks</button>
+      </div>
+      <div class="dropdown">
+        <button>Documents</button>
+      </div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get("userId");
+
+      if (userId) {
+        document.getElementById(
+          "welcomeText"
+        ).textContent = `Welcome Roll No :${userId}`;
+      }
+
+      document
+        .getElementById("tasksBtn")
+        .addEventListener("click", function () {
+          window.location.href = "Tasks.html";
+        });
+    </script>
+  </body>
+</html>

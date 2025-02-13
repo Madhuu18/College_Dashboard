@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Register.css" />
+    <title>College Dashboard</title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+
+    <label class="textbox">Username :</label>
+    <input
+      type="number"
+      id="username"
+      class="Inputbox"
+      min="1"
+      max="100"
+      placeholder="Enter a number (1-100)"
+      required
+    />
+    <br /><br /><br /><br />
+
+    <label class="textbox">Password :</label>
+    <input
+      type="password"
+      id="password"
+      class="Inputbox"
+      placeholder="Password"
+      required
+    />
+    <br /><br />
+
+    <span id="error-message" class="error"></span>
+
+    <button id="loginBtn" class="login-button">Login</button>
+
+    <script>
+      document
+        .getElementById("loginBtn")
+        .addEventListener("click", function () {
+          let userValue = parseInt(document.getElementById("username").value);
+          let passwordValue = document.getElementById("password").value;
+          let errorMessage = document.getElementById("error-message");
+
+          if (isNaN(userValue) || passwordValue.trim() === "") {
+            errorMessage.textContent = "Fill something";
+            errorMessage.style.color = "red";
+            return;
+          }
+
+          if (userValue < 1 || userValue > 100) {
+            errorMessage.textContent = "No data found";
+            errorMessage.style.color = "red";
+            return;
+          }
+
+          if (passwordValue !== "Hindustan@123") {
+            errorMessage.textContent = "Password is Incorrect";
+            errorMessage.style.color = "red";
+            return;
+          } else {
+            alert("Login Successful!");
+            window.location.href = `Login.html?userId=${userValue}`;
+            return;
+          }
+        });
+    </script>
+  </body>
+</html>

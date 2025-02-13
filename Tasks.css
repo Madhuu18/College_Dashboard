@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 66px;
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  gap: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+}
+
+.container p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container p.completed::after {
+  content: " ✅";
+  color: green;
+}
+
+#button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  color: aliceblue;
+  background-color: brown;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: rgb(244, 57, 57);
+}
